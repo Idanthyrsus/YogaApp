@@ -25,11 +25,12 @@ class AllAsanasPickerViewController: AllAsanasViewController {
     }
     
     private func setNavigationItem() {
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addItems))
+        let rightBarButton = UIBarButtonItem(title: "Добавить", style: .done, target: self, action: #selector(addItems))
         let leftBarButton = UIBarButtonItem(title: "Отмена", style: .done, target: self, action: #selector(goBack))
         
         self.navigationItem.rightBarButtonItem = rightBarButton
         self.navigationItem.leftBarButtonItem = leftBarButton
+        navigationItem.title = "Выберите асаны и нажмите \"Добавить\""
         
     }
     
@@ -123,6 +124,5 @@ class AllAsanasPickerViewController: AllAsanasViewController {
             asanaNames.removeAll { $0 == filteredArray[indexPath.row]}
             
         }
-        
     }
 }

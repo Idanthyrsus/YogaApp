@@ -8,16 +8,16 @@
 import Foundation
 
 struct CustomCell {
-    var asana: String
+    var category: String
 }
 
-let asanasData = [
-CustomCell(asana: "Все асаны"),
-CustomCell(asana: "Позвоночник"),
-CustomCell(asana: "Положение в пространстве"),
-CustomCell(asana: "Акценты нагрузки"),
-CustomCell(asana: "Периферия"),
-CustomCell(asana: "Дополнительно"),
+let categories = [
+CustomCell(category: "Все асаны"),
+CustomCell(category: "Позвоночник"),
+CustomCell(category: "Положение в пространстве"),
+CustomCell(category: "Акценты нагрузки"),
+CustomCell(category: "Периферия"),
+CustomCell(category: "Дополнительно"),
 ]
 
 

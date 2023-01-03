@@ -10,6 +10,7 @@ import PhotosUI
 
 class AllAsanasViewController: UIViewController {
     
+    var dataSourceArray: [CustomDataForAllAsanas] = allAsanasPhotos
     var filteredArray: [CustomDataForAllAsanas] = []
     var isFound: Bool?
     
@@ -95,7 +96,6 @@ class AllAsanasViewController: UIViewController {
     func allowMultipleSelection() {
         collectionView.allowsMultipleSelection = true
     }
-    
 }
 
 extension AllAsanasViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -106,7 +106,7 @@ extension AllAsanasViewController: UICollectionViewDelegateFlowLayout, UICollect
             return cell
         }
         if (!(isFound ?? false)) {
-            if let customImage = UIImage(named: allAsanasPhotos[indexPath.row].image) {
+            if let customImage = UIImage(named: dataSourceArray[indexPath.row].image) {
                 cell.apply(photos: customImage)
             }
         } else {
@@ -118,12 +118,11 @@ extension AllAsanasViewController: UICollectionViewDelegateFlowLayout, UICollect
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isFound ?? false {
             return filteredArray.count
         } else {
-            return allAsanasPhotos.count
+            return dataSourceArray.count
         }
     }
     
@@ -150,9 +149,9 @@ extension AllAsanasViewController: UICollectionViewDelegateFlowLayout, UICollect
         let viewController = AsanaDescriptionViewController()
         viewController.selectedIndex = indexPath.row
         guard isFound ?? false else {
-            viewController.imageArray = allAsanasPhotos
-            viewController.apply(text: allAsanasPhotos[indexPath.row].image)
-            if let asanaImage = UIImage(named: allAsanasPhotos[indexPath.row].image) {
+            viewController.imageArray = dataSourceArray
+            viewController.apply(text: dataSourceArray[indexPath.row].image)
+            if let asanaImage = UIImage(named: dataSourceArray[indexPath.row].image) {
                 viewController.loadImage(image: asanaImage)
             }
             pushView(viewController: viewController)
@@ -170,9 +169,9 @@ extension AllAsanasViewController: UICollectionViewDelegateFlowLayout, UICollect
 extension AllAsanasViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            filteredArray = allAsanasPhotos
+            filteredArray = dataSourceArray
         } else {
-            filteredArray = allAsanasPhotos.filter{$0.image.contains(searchText)}
+            filteredArray = dataSourceArray.filter{$0.image.contains(searchText)}
         }
         isFound = true
         collectionView.reloadData()

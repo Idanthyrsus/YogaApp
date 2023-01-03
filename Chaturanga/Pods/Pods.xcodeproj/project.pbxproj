@@ -51,7 +51,7 @@
 		8CD41C7995AC7A1B01E7DA110305CD98 /* Pods-Chaturanga-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Chaturanga-acknowledgements.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1FF5E2742007D012B650E911622DFDF /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
-		AE4BFF5ACA5B6A0E0AAE7FEF1ADCF490 /* Pods-Chaturanga */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Chaturanga"; path = Pods_Chaturanga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4BFF5ACA5B6A0E0AAE7FEF1ADCF490 /* Pods_Chaturanga.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chaturanga.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB8290E299516843AFF3B8C541CC9DB /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Sources/YTPlayerView.h; sourceTree = "<group>"; };
 		BF99BFAF1DE98DD0EE3D6D15B4EA8EF5 /* Pods-Chaturanga-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Chaturanga-umbrella.h"; sourceTree = "<group>"; };
 		CB14A33B8EF487738D3BE566063DD36B /* Pods-Chaturanga.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Chaturanga.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		D59503D9E39FC5EF75491AEBFDC80BB2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE4BFF5ACA5B6A0E0AAE7FEF1ADCF490 /* Pods-Chaturanga */,
+				AE4BFF5ACA5B6A0E0AAE7FEF1ADCF490 /* Pods_Chaturanga.framework */,
 				8498A1B2C60117E181CA67921DDAE0B6 /* youtube_ios_player_helper.framework */,
 				D674200BB0575198145B5455CF13275F /* Assets.bundle */,
 			);
@@ -252,7 +252,7 @@
 			);
 			name = "Pods-Chaturanga";
 			productName = Pods_Chaturanga;
-			productReference = AE4BFF5ACA5B6A0E0AAE7FEF1ADCF490 /* Pods-Chaturanga */;
+			productReference = AE4BFF5ACA5B6A0E0AAE7FEF1ADCF490 /* Pods_Chaturanga.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D1A7AF186BE136DE56FD5699070589B8 /* youtube-ios-player-helper */ = {
@@ -378,11 +378,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 56GJJ22ADR;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 56GJJ22ADR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -416,11 +416,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 56GJJ22ADR;
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = 56GJJ22ADR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -590,6 +590,7 @@
 			baseConfigurationReference = 4AEA34178540C08DD8DD6FD544C6792F /* youtube-ios-player-helper.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/youtube-ios-player-helper";
+				DEVELOPMENT_TEAM = 56GJJ22ADR;
 				IBSC_MODULE = youtube_ios_player_helper;
 				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/ResourceBundle-Assets-youtube-ios-player-helper-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -669,6 +670,7 @@
 			baseConfigurationReference = 221B06E63B8D07B2586C67D6AB275F92 /* youtube-ios-player-helper.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/youtube-ios-player-helper";
+				DEVELOPMENT_TEAM = 56GJJ22ADR;
 				IBSC_MODULE = youtube_ios_player_helper;
 				INFOPLIST_FILE = "Target Support Files/youtube-ios-player-helper/ResourceBundle-Assets-youtube-ios-player-helper-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct AdditionalCategories {
-    var categoryName: String
-}
-
 let additionalCategories = [
-AdditionalCategories(categoryName: "На кор (центр)"),
-AdditionalCategories(categoryName: "Для расслабления,\nпранаямы, медитации"),
-AdditionalCategories(categoryName: "Крийи")
+Categories(categoryName: "На кор (центр)"),
+Categories(categoryName: "Для расслабления,\nпранаямы, медитации"),
+Categories(categoryName: "Крийи")
 ]
 
 let additionalCategoriesPictures = ["Парипурна Навасана", "Падмасана", "Симхасана"]
+
+let additionalCategoriesArray: [[CustomDataForAllAsanas]] = []

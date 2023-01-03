@@ -9,6 +9,11 @@ import UIKit
 
 class CategoryViewController: AllAsanasViewController {
     
+    var categoryTitle: [Categories] = []
+    var categoryDatasource: [[CustomDataForAllAsanas]] = []
+    var categoryData: [Categories] = []
+    var categoryPicture: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Категории"
@@ -24,8 +29,8 @@ class CategoryViewController: AllAsanasViewController {
             return cell
         }
         
-        cell.applyLabel(text: spineCategories[indexPath.row].categoryName)
-        if let cellImage = UIImage(named: spineCategoriesPictures[indexPath.row]) {
+        cell.applyLabel(text: categoryData[indexPath.row].categoryName)
+        if let cellImage = UIImage(named: categoryPicture[indexPath.row]) {
             cell.apply(photos: cellImage)
             cell.setOpacity()
         }
@@ -35,7 +40,7 @@ class CategoryViewController: AllAsanasViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        spineCategories.count
+        categoryData.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -62,21 +67,12 @@ class CategoryViewController: AllAsanasViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            let viewController = BackBendViewController()
-            navigationController?.pushViewController(viewController, animated: true)
-        case 1:
-            let viewController = ForwardViewController()
-            navigationController?.pushViewController(viewController, animated: true)
-        case 2:
-            let viewController = TwistViewController()
-            navigationController?.pushViewController(viewController, animated: true)
-        case 3:
-            let viewController = LateralSlopeViewController()
-            navigationController?.pushViewController(viewController, animated: true)
-        default: return
-        }
+        let viewController = AllAsanasViewController()
+        viewController.dataSourceArray = categoryDatasource[indexPath.row]
+        viewController.searchBar.removeFromSuperview()
+        viewController.searchBar.isHidden = true
+        viewController.navigationItem.title = categoryTitle[indexPath.row].categoryName
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

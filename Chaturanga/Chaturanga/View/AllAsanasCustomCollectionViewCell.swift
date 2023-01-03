@@ -25,8 +25,6 @@ class AllAsanasCustomCollectionViewCell: UICollectionViewCell {
         }
     }
     
- 
-    
    private lazy var selectLabel: UILabel = {
         let label = UILabel()
         label.layer.cornerRadius = 15
@@ -119,6 +117,8 @@ class AllAsanasCustomCollectionViewCell: UICollectionViewCell {
     
     
      func setup(originCell: AllAsanasCustomCollectionViewCell) {
+         originCell.layer.borderWidth = 3.0
+         originCell.layer.borderColor = .init(red: 1.0, green: 0.54, blue: 0, alpha: 1.0)
          originCell.backgroundColor = .white
          originCell.layer.cornerRadius = 12
          originCell.layer.shadowRadius = 5

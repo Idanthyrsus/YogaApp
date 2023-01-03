@@ -1,9 +1,3 @@
-//
-//  CustomCellForAsanasCollectionViewCell.swift
-//  Chaturanga
-//
-//  Created by MacBook Air on 08.11.2022.
-//
 
 import UIKit
 
@@ -56,7 +50,9 @@ class CustomCellForAsanasCollectionViewCell: UICollectionViewCell {
         asanasLabel.text = nil
     }
     
-    func apply(asanasLabel: String) {
+    func apply(asanasLabel: String, color: UIColor, cornerRadius: CGFloat) {
         self.asanasLabel.text = asanasLabel
+        self.backgroundColor = color
+        self.layer.cornerRadius = cornerRadius
     }
 }

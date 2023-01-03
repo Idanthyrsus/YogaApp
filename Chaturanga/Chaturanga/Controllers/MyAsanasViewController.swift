@@ -1,9 +1,3 @@
-//
-//  TrainingsViewController.swift
-//  Chaturanga
-//
-//  Created by Alexander Korchak on 07.11.2022.
-//
 
 import UIKit
 import CoreData
@@ -15,7 +9,29 @@ class MyAsanasViewController: AllAsanasViewController {
     override func setupSearchBar() {
         self.searchBar.removeFromSuperview()
     }
+    
+    private lazy var gesture: UILongPressGestureRecognizer = {
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture))
+        return gesture
+    }()
  
+    @objc private func handleLongPressGesture() {
+        switch gesture.state {
+        case .began:
+            guard let targetIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+                return
+            }
+            collectionView.beginInteractiveMovementForItem(at: targetIndexPath)
+        case .changed:
+            collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: collectionView))
+            
+        case .ended:
+            collectionView.endInteractiveMovement()
+        default:
+            collectionView.cancelInteractiveMovement()
+        }
+    }
+    
     private lazy var plusButton: UIButton = {
         let button = UIButton()
     
@@ -36,7 +52,6 @@ class MyAsanasViewController: AllAsanasViewController {
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 1.7
        
-        
         return button
     }()
     
@@ -46,6 +61,7 @@ class MyAsanasViewController: AllAsanasViewController {
         self.view.backgroundColor = .white
         self.navigationItem.title = "Мои асаны"
         self.navigationItem.largeTitleDisplayMode = .never
+        collectionView.addGestureRecognizer(gesture)
         setupElements()
         fetchList()
         addEditButton()
@@ -113,8 +129,8 @@ class MyAsanasViewController: AllAsanasViewController {
         context.delete(item)
         do {
             try context.save()
-        } catch  {
-
+        } catch let error as NSError {
+            print(error)
         }
     }
 
@@ -179,6 +195,8 @@ class MyAsanasViewController: AllAsanasViewController {
        
     }
     
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         savedAsanas.count
     }
@@ -200,6 +218,14 @@ class MyAsanasViewController: AllAsanasViewController {
             pushView(viewController: viewController)
             return
         }
+    }
+     func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let item = savedAsanas.remove(at: sourceIndexPath.row)
+        savedAsanas.insert(item, at: destinationIndexPath.row)
     }
 }
 

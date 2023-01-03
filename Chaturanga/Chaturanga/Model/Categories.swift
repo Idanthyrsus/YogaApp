@@ -7,15 +7,18 @@
 
 import Foundation
 
-struct SpineCategories {
+struct Categories {
     var categoryName: String
 }
 
 let spineCategories = [
-SpineCategories(categoryName: "Прогиб"),
-SpineCategories(categoryName: "Наклон"),
-SpineCategories(categoryName: "Скрутка"),
-SpineCategories(categoryName: "Боковой наклон")
+Categories(categoryName: "Прогиб"),
+Categories(categoryName: "Наклон"),
+Categories(categoryName: "Скрутка"),
+Categories(categoryName: "Боковой наклон")
 ]
 
 let spineCategoriesPictures = ["Бхуджангасана", "Пащимоттанасана", "Ардха Матсиендрасана", "Паригхасана"]
+
+let spineCategoriesArray: [[CustomDataForAllAsanas]] = [backBendPhotos, forwardPhotos, twistPhotos, lateralSlopePhotos]
+

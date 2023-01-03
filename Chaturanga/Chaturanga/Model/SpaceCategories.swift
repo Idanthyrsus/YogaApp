@@ -7,18 +7,25 @@
 
 import Foundation
 
-struct SpaceCategories {
-    var categoryName: String
-}
+
+var spaceCategoriesArray: [[CustomDataForAllAsanas]] = [
+    standingPhotos,
+    handStandsPhotos,
+    sittingPhotos,
+    pronePhotos,
+    restingPhotos,
+    sidePhotos,
+    reversedPhotos
+]
 
 let spaceCategories = [
-SpaceCategories(categoryName: "Стоя на ногах"),
-SpaceCategories(categoryName: "Стоя на руках"),
-SpaceCategories(categoryName: "Сидя"),
-SpaceCategories(categoryName: "Лёжа на животе,\nпланки животом вниз"),
-SpaceCategories(categoryName: "Лёжа на спине,\nпланки животом вверх"),
-SpaceCategories(categoryName: "Лёжа на боку,\nпланки боком вниз"),
-SpaceCategories(categoryName: "Перевёрнутые")
+Categories(categoryName: "Стоя на ногах"),
+Categories(categoryName: "Стоя на руках"),
+Categories(categoryName: "Сидя"),
+Categories(categoryName: "Лёжа на животе\nПланки животом вниз"),
+Categories(categoryName: "Лёжа на спине\nПланки животом вверх"),
+Categories(categoryName: "Лёжа на боку\nПланки боком вниз"),
+Categories(categoryName: "Перевёрнутые")
 ]
 
 let spaceCategoriesPictures = ["Тадасана", "Адхомукха Врикшасана", "Ваджрасана", "Чатуранга Дандасана", "Йога Нидрасана", "Васиштхасана", "Саламба Ширшасана 1"]
@@ -103,7 +110,6 @@ let standingPhotos = [
     CustomDataForAllAsanas(image: "Экапада Уттанасана"),
     CustomDataForAllAsanas(image: "Экапада Уштрасана")
 ]
-
 
 let handStandsPhotos = [
 CustomDataForAllAsanas(image: "Адхомукха Врикшасана"),
@@ -298,4 +304,87 @@ CustomDataForAllAsanas(image: "Трианга Дандасана"),
 CustomDataForAllAsanas(image: "Шалабхасана"),
 CustomDataForAllAsanas(image: "Шашанкасана"),
 CustomDataForAllAsanas(image: "Адхомукха Ардха Экапада Раджакапотасана"),
+]
+
+let restingPhotos = [
+    CustomDataForAllAsanas(image: "Супта Экапада Агни Стамбхасана"),
+    CustomDataForAllAsanas(image: "Супта Акарна Дханурасана"),
+    CustomDataForAllAsanas(image: "Супта Ардха Матсиендрасана"),
+    CustomDataForAllAsanas(image: "Супта Баддха Конасана"),
+    CustomDataForAllAsanas(image: "Супта Вирасана"),
+    CustomDataForAllAsanas(image: "Супта Паривритта Гарудасана"),
+    CustomDataForAllAsanas(image: "Двипада Питхасана"),
+    CustomDataForAllAsanas(image: "Уттхита Двипада Питхасана"),
+    CustomDataForAllAsanas(image: "Экапада Питхасана"),
+    CustomDataForAllAsanas(image: "Уттхита Экапада Питхасана"),
+    CustomDataForAllAsanas(image: "Джатхара Паривартанасана 1"),
+    CustomDataForAllAsanas(image: "Джатхара Паривартанасана 2"),
+    CustomDataForAllAsanas(image: "Йога Нидрасана"),
+    CustomDataForAllAsanas(image: "Капотасана"),
+    CustomDataForAllAsanas(image: "Крокодил - комплекс"),
+    CustomDataForAllAsanas(image: "Матсьясана"),
+    CustomDataForAllAsanas(image: "Уттана Падасана"),
+    CustomDataForAllAsanas(image: "Супта Бхекасана"),
+    CustomDataForAllAsanas(image: "Супта Ваджрасана"),
+    CustomDataForAllAsanas(image: "Павана Муктасана"),
+    CustomDataForAllAsanas(image: "Супта Падмасана"),
+    CustomDataForAllAsanas(image: "Урдхвамукха Пащимоттанасана"),
+    CustomDataForAllAsanas(image: "Пурвоттанасана"),
+    CustomDataForAllAsanas(image: "Ардха Пурвоттанасана"),
+    CustomDataForAllAsanas(image: "Экапада Пурвоттанасана"),
+    CustomDataForAllAsanas(image: "Экапада Ардха Пурвоттанасана"),
+    CustomDataForAllAsanas(image: "Сетубандха Сарвангасана"),
+    CustomDataForAllAsanas(image: "Супта Падангуштхасана 1"),
+    CustomDataForAllAsanas(image: "Супта Падангуштхасана 2"),
+    CustomDataForAllAsanas(image: "Супта Падангуштхасана 3"),
+    CustomDataForAllAsanas(image: "Урдхвамукха Упавишта Конасана"),
+    CustomDataForAllAsanas(image: "Урдхва Дханурасана"),
+    CustomDataForAllAsanas(image: "Экапада Урдхва Дханурасана"),
+    CustomDataForAllAsanas(image: "Экахаста Урдхва Дханурасана"),
+    CustomDataForAllAsanas(image: "Экападахаста Урдхва Дханурасана"),
+    CustomDataForAllAsanas(image: "Урдхва Прасарита Падасана 1"),
+    CustomDataForAllAsanas(image: "Урдхва Прасарита Падасана 2"),
+    CustomDataForAllAsanas(image: "Шавасана")
+]
+
+let sidePhotos = [
+CustomDataForAllAsanas(image: "Анантасана"),
+CustomDataForAllAsanas(image: "Мукта Двипада Анантасана"),
+CustomDataForAllAsanas(image: "Васиштхасана"),
+CustomDataForAllAsanas(image: "Мукта Васиштхасана"),
+CustomDataForAllAsanas(image: "Кашьяпасана"),
+CustomDataForAllAsanas(image: "Капинджаласана"),
+CustomDataForAllAsanas(image: "Вишвамитрасана"),
+CustomDataForAllAsanas(image: "Мукта Вишвамитрасана"),
+CustomDataForAllAsanas(image: "Ардха Вишвамитрасана"),
+CustomDataForAllAsanas(image: "Мукта Ардха Вишвамитрасана"),
+CustomDataForAllAsanas(image: "Лагху Вишвамитрасана"),
+CustomDataForAllAsanas(image: "Паршва Дханурасана"),
+CustomDataForAllAsanas(image: "Паршва Экапада Дханурасана"),
+CustomDataForAllAsanas(image: "Кала Бхайравасана")
+]
+
+let reversedPhotos = [
+CustomDataForAllAsanas(image: "Адхомукха Врикшасана"),
+CustomDataForAllAsanas(image: "Врищчикасана"),
+CustomDataForAllAsanas(image: "Падма Врищчикасана"),
+CustomDataForAllAsanas(image: "Урдхва Врищчикасана"),
+CustomDataForAllAsanas(image: "Адхо Врищчикасана"),
+CustomDataForAllAsanas(image: "Падма Адхо Врищчикасана"),
+CustomDataForAllAsanas(image: "Ганда Бхерундасана"),
+CustomDataForAllAsanas(image: "Падма Ганда Бхерундасана"),
+CustomDataForAllAsanas(image: "Карна Пидасана"),
+CustomDataForAllAsanas(image: "Паривритта Карна Пидасана"),
+CustomDataForAllAsanas(image: "Урдхва Падмасана"),
+CustomDataForAllAsanas(image: "Пинча Маюрасана"),
+CustomDataForAllAsanas(image: "Экахаста Шаянасана"),
+CustomDataForAllAsanas(image: "Саламба Сарвангасана"),
+CustomDataForAllAsanas(image: "Нираламба Сарвангасана"),
+CustomDataForAllAsanas(image: "Паршва Саламба Сарвангасана"),
+CustomDataForAllAsanas(image: "Халасана"),
+CustomDataForAllAsanas(image: "Випарита Шалабхасана"),
+CustomDataForAllAsanas(image: "Саламба Ширшасана 1"),
+CustomDataForAllAsanas(image: "Саламба Ширшасана 2"),
+CustomDataForAllAsanas(image: "Паривритта Ширшасана"),
+CustomDataForAllAsanas(image: "Ширша Падасана")
 ]

@@ -13,7 +13,6 @@ class TabBarViewController: UITabBarController {
         let controller = UINavigationController(rootViewController: MainViewController())
         controller.tabBarItem.image = UIImage(systemName: "house.fill")
         controller.tabBarItem.title = "Каталог асан"
-        controller.navigationBar.prefersLargeTitles = true
         controller.navigationBar.backgroundColor = .white
         return controller
     }()
@@ -22,7 +21,6 @@ class TabBarViewController: UITabBarController {
         let controller = UINavigationController(rootViewController: MyAsanasViewController())
         controller.tabBarItem.image = UIImage(systemName: "person.fill")
         controller.tabBarItem.title = "Мои асаны"
-        controller.navigationBar.prefersLargeTitles = true
         controller.navigationBar.backgroundColor = .white
         return controller
     }()
@@ -31,16 +29,14 @@ class TabBarViewController: UITabBarController {
         let controller = UINavigationController(rootViewController: QuotesViewController())
         controller.tabBarItem.image = UIImage(systemName: "list.bullet")
         controller.tabBarItem.title = "Цитаты"
-        controller.navigationBar.prefersLargeTitles = true
         controller.navigationBar.backgroundColor = .white
         return controller
     }()
     
     private lazy var videoViewController: UINavigationController = {
-        let controller = UINavigationController(rootViewController: VideoViewController())
+        let controller = UINavigationController(rootViewController: VideoCategoriesViewController())
         controller.tabBarItem.image = UIImage(systemName: "play.circle")
         controller.tabBarItem.title = "Видео"
-        controller.navigationBar.prefersLargeTitles = true
         controller.navigationBar.backgroundColor = .white
         return controller
     }()
